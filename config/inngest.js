@@ -1,6 +1,5 @@
 import { Inngest} from "inngest";
 import connectDB from "./db";
-import { userAgent } from "next/server";
 import User from "@/models/User";
 
 // Create a client to send and receive events
@@ -20,7 +19,7 @@ export const syncUserCreation =inngest.createFunction(
             _id:id,
             email:email_addresses[0].email_addresses,
             name:first_name+''+last_name,
-            image_url:image_url
+            imageUrl:image_url
 
         }
         await connectDB()
