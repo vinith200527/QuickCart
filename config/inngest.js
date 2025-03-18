@@ -18,16 +18,18 @@ export const syncUserCreation =inngest.createFunction(
         const userData={
             _id:id,
             email:email_addresses[0].email_addresses,
-            name:first_name+''+last_name,
+            name:first_name +''+ last_name,
             imageUrl:image_url
 
         }
         await connectDB()
         await User.create(userData)
-
+        console.error( event.data);
 
     }
 )
+
+
 
 //Ingest Function to update user ddata in database
 
